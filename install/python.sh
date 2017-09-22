@@ -1,3 +1,4 @@
+#!/bin/bash
 apt-get update && apt-get install -y python && apt-get clean
 apt-get update && apt-get install -y python-dev && apt-get clean
 apt-get update && apt-get install -y python-pip && apt-get clean

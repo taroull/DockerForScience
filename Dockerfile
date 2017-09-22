@@ -1,30 +1,35 @@
 #
 # https://docs.docker.com/engine/reference/builder/
 #
-#1.OS
+#OS
 FROM ubuntu:latest
 LABEL maintainer="Sergio Martin Santana <sergio.ms.91@gmail.com>"
-
 WORKDIR /install
-#COPY install /install
 
-#2.Base Apps
-COPY /install/base .
-RUN ./base
+#1.Base Apps
+COPY /install/base.sh .
+RUN bash base.sh
 
 #2.Python
-COPY /install/python .
-RUN ./python
+COPY /install/python.sh .
+RUN bash python.sh
+
+#4. Spark
+COPY install/spark.sh .
+RUN bash spark.sh
 
 #3.Jupyter
 WORKDIR /root/.jupyter/
 COPY install/jupyter_notebook_config.py .
 WORKDIR /install
-COPY install/jupyter .
-RUN ./jupyter
+COPY install/jupyter.sh .
+RUN bash jupyter.sh
 
 #X. Ports Exposed
+#Jupyter
 EXPOSE 8888
+#Spark
+EXPOSE 8080 8081 7077
 
 #X. Clean Installation
 WORKDIR /home

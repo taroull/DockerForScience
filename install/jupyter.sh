@@ -1,4 +1,4 @@
-
+#!/bin/bash
 pip install --upgrade pip && pip install jupyter
 python -m pip install --upgrade pip && python3 -m pip install --upgrade pip
 python -m pip install findspark && python3 -m pip install findspark

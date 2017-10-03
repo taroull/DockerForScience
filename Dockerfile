@@ -40,5 +40,6 @@ EXPOSE 8888
 EXPOSE 8080 8081 7077
 
 #X. Clean Installation
-# WORKDIR /home
-# RUN rm -rf /install
+WORKDIR /home
+RUN rm -rf /install
+CMD ["jupyter", "notebook", "--no-browser", "--allow-root"]

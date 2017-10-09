@@ -34,8 +34,8 @@ RUN bash R.sh
 COPY install/Rconfig.R .
 RUN Rscript Rconfig.R
 #5.RStudio
-# COPY install/RStudio.sh .
-# RUN bash RStudio.sh
+COPY install/RStudio.sh .
+RUN bash RStudio.sh
 
 #X. Ports Exposed
 #Jupyter
@@ -46,6 +46,7 @@ EXPOSE 8080 8081 7077
 EXPOSE 8787
 
 #X. Clean Installation
-WORKDIR /home
+COPY install/start.sh /etc/start.sh
+WORKDIR /notebooks
 RUN rm -rf /install
-#CMD ["jupyter", "notebook", "--no-browser", "--allow-root"]
+ENTRYPOINT ["/etc/start.sh"]

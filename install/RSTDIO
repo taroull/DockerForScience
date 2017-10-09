@@ -1,0 +1,12 @@
+/etc/rstudio/server.conf
+  www-port=8787
+  server-app-armor-enabled=0
+
+  CREAR USUARIO
+  export PASSWORD="1234"
+  sudo addgroup rstudio
+  sudo useradd -m -s /bin/bash -g rstudio rstudio -p $PASSWORD
+
+  ln -s /usr/lib/rstudio-server/extras/init.d/debian/rstudio-server /etc/init.d/rstudio-server
+
+  /etc/init.d/rstudio-server restart

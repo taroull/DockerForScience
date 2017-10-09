@@ -12,4 +12,3 @@ apt-get install -y libcurl4-openssl-dev libssl-dev
 # install IRkernel
 # https://github.com/IRkernel/IRkernel
 # http://irkernel.github.io/installation/
-#

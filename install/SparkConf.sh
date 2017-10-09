@@ -2,7 +2,7 @@
 masterip='172.17.0.2'
 myip=$(/sbin/ip -o -4 addr list eth0 | awk '{print $4}' | cut -d/ -f1)
 #
-if [ "$myip" = "172.17.0.2" ]
+if [ "$myip" = "$masterip" ]
 then
     echo "Master"
     echo "SPARK_MASTER_HOST=$myip" >> /opt/spark/conf/spark-env.sh

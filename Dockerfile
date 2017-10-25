@@ -17,6 +17,8 @@ RUN bash base.sh
 #2.Python
 COPY /install/python.sh .
 RUN bash python.sh
+COPY /install/custom_python.sh .
+RUN bash custom_python.sh
 
 #4. Spark
 COPY install/spark.sh .

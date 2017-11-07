@@ -8,7 +8,8 @@ add-apt-repository "deb [arch=$R_ARCH] $R_REPO $R_SO_VER"
 apt-get update -y
 apt-get install -y r-base
 apt-get install -y libcurl4-openssl-dev libssl-dev
-
+echo "R_LIBS='/notebooks/Rlibraries'" >> /usr/lib/R/etc/Renviron
+#echo "R_LIBS='/notebooks/Rlibraries'" >> /usr/local/lib/R/etc/Renviron
 # install IRkernel
 # https://github.com/IRkernel/IRkernel
 # http://irkernel.github.io/installation/

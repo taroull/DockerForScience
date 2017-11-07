@@ -50,6 +50,7 @@ EXPOSE 8787
 #X. Clean Installation
 COPY install/start.sh /etc/start.sh
 COPY install/SparkConf.sh /etc/SparkConf.sh
+WORKDIR /notebooks/Rlibraries
 WORKDIR /notebooks
 RUN rm -rf /install
 ENTRYPOINT ["/etc/start.sh"]

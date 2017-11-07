@@ -1,4 +1,4 @@
-SET dir=<InsertNotebooksFolderPath>
+SET dir=<InsertNotebooksFolderAbsolutePath>
 docker network rm docker4science
 mkdir notebooks
 docker network create --subnet 172.27.0.0/24 --driver bridge docker4science

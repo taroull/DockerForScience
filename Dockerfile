@@ -31,6 +31,8 @@ WORKDIR /install
 COPY install/jupyter.sh .
 RUN bash jupyter.sh
 #4.R
+WORKDIR /notebooks/Rlibraries
+WORKDIR /install
 COPY install/R.sh .
 RUN bash R.sh
 COPY install/Rconfig.R .
@@ -50,7 +52,6 @@ EXPOSE 8787
 #X. Clean Installation
 COPY install/start.sh /etc/start.sh
 COPY install/SparkConf.sh /etc/SparkConf.sh
-WORKDIR /notebooks/Rlibraries
 WORKDIR /notebooks
 RUN rm -rf /install
 ENTRYPOINT ["/etc/start.sh"]

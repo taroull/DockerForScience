@@ -12,7 +12,6 @@ else
     echo "SPARK_MASTER_HOST=$masterip" >> /opt/spark/conf/spark-env.sh
     echo "SPARK_WORKER_CORES=2" >> /opt/spark/conf/spark-env.sh
     echo "SPARK_WORKER_MEMORY=1g" >> /opt/spark/conf/spark-env.sh
-    echo "SPARK_WORKER_INSTANCES=2" >> /opt/spark/conf/spark-env.sh
     /opt/spark/sbin/start-slave.sh spark://$masterip:7077
 
 fi

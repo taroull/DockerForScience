@@ -52,6 +52,9 @@ EXPOSE 8787
 #X. Clean Installation
 COPY install/start.sh /etc/start.sh
 COPY install/SparkConf.sh /etc/SparkConf.sh
+WORKDIR /notebooks/PyLibraries
+WORKDIR /install
+ENV PIP_TARGET /notebooks/PyLibraries
 WORKDIR /notebooks
 RUN rm -rf /install
 ENTRYPOINT ["/etc/start.sh"]

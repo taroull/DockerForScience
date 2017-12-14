@@ -55,6 +55,8 @@ EXPOSE 8787
 #X. Clean Installation
 COPY install/start.sh /etc/start.sh
 COPY install/SparkConf.sh /etc/SparkConf.sh
+WORKDIR /notebooks/PyLibraries
+WORKDIR /install
 WORKDIR /notebooks
 #RUN rm -rf /install
 RUN locale-gen en_US.UTF-8

@@ -1,4 +1,5 @@
 #!/bin/bash
+
 if [ "$1" = "" ]
 then
 NWorkers=2

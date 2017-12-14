@@ -1,4 +1,5 @@
 #!/bin/bash
+
 apt-get update -y && apt-get install -y python python-dev python-pip
 apt-get update -y && apt-get install -y python3 python3-dev python3-pip
 python -m pip install --upgrade pip

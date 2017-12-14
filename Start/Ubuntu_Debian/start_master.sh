@@ -1,4 +1,5 @@
 #!/bin/bash
+
 dir="notebooks"
 docker network rm docker4science
 docker network create --subnet 172.27.0.0/24 --driver bridge docker4science

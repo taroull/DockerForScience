@@ -58,7 +58,7 @@ COPY install/SparkConf.sh /etc/SparkConf.sh
 WORKDIR /notebooks/PyLibraries
 WORKDIR /install
 WORKDIR /notebooks
-#RUN rm -rf /install
+RUN rm -rf /install
 RUN locale-gen en_US.UTF-8
 RUN echo "R_LIBS='/notebooks/Rlibraries'" >> /usr/lib/R/etc/Renviron
 RUN echo "setwd('/notebooks')" >> /etc/R/Rprofile.site

@@ -9,5 +9,6 @@ RSetUpConfig <- function() {
 MakingAvalible <- function() {
   IRkernel::installspec(user = FALSE)
 }
+
 RSetUpConfig()
 MakingAvalible()

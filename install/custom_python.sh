@@ -1,6 +1,7 @@
 #!/bin/bash
 #Specify as "<library>[==version] … [<libraryN>[==version]]”
 #Libraries="pandas==0.21.0 scipy bokeh plotly"
+
 Libraries=""
 if [ ! -z "$Libraries" ];
 then

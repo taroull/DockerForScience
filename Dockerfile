@@ -15,10 +15,13 @@ COPY /install/base.sh .
 RUN bash base.sh
 
 #2.Python
+WORKDIR /notebooks/PyLibraries
+WORKDIR /install
 COPY /install/python.sh .
 RUN bash python.sh
 COPY /install/custom_python.sh .
 RUN bash custom_python.sh
+
 
 #4. Spark
 COPY install/spark.sh .
@@ -53,5 +56,10 @@ EXPOSE 8787
 COPY install/start.sh /etc/start.sh
 COPY install/SparkConf.sh /etc/SparkConf.sh
 WORKDIR /notebooks
-RUN rm -rf /install
+#RUN rm -rf /install
+RUN locale-gen en_US.UTF-8
+RUN echo "R_LIBS='/notebooks/Rlibraries'" >> /usr/lib/R/etc/Renviron
+RUN echo "setwd('/notebooks')" >> /etc/R/Rprofile.site
+ENV PIP_TARGET /notebooks/PyLibraries
+
 ENTRYPOINT ["/etc/start.sh"]

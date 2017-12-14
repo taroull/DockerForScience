@@ -1,4 +1,3 @@
-
 RSetUpConfig <- function() {
   install.packages('devtools', repos='https://cloud.r-project.org/')
   install.packages('RCurl', repos='https://cloud.r-project.org/')
@@ -8,8 +7,7 @@ RSetUpConfig <- function() {
   install_github('IRkernel/IRkernel')
   }
 MakingAvalible <- function() {
-  IRkernel::installspec()
+  IRkernel::installspec(user = FALSE)
 }
-
 RSetUpConfig()
 MakingAvalible()

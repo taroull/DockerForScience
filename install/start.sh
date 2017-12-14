@@ -9,6 +9,7 @@ then
   exec jupyter notebook --no-browser --allow-root &> /dev/null &
   tail -f /dev/null 	#Sleep forever(This keeps the container in the state running)
 else
+  locale-gen en_US.UTF-8
   bash /etc/SparkConf.sh
   tail -f /dev/null		#Sleep forever(This keeps the container in the state running)
 fi

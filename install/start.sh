@@ -13,3 +13,4 @@ else
   bash /etc/SparkConf.sh
   tail -f /dev/null		#Sleep forever(This keeps the container in the state running)
 fi
+

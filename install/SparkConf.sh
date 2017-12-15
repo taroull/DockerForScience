@@ -14,3 +14,4 @@ else
     /opt/spark/sbin/start-slave.sh spark://$masterip:7077
 
 fi
+

@@ -9,3 +9,4 @@ python -m pip install scikit-learn && python3 -m pip install scikit-learn
 python -m pip install ipykernel && python -m ipykernel install --user
 python3 -m pip install ipykernel && python3 -m ipykernel install --user
 python -m pip install imageio && python3 -m pip install imageio
+

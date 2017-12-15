@@ -10,3 +10,4 @@ apt-get install -y r-base
 apt-get install -y libcurl4-openssl-dev libssl-dev
 echo "R_LIBS='/notebooks/Rlibraries'" >> /usr/lib/R/etc/Renviron
 echo "setwd('/notebooks')" >> /etc/R/Rprofile.site
+

@@ -12,3 +12,4 @@ ln -s /opt/spark-$SPARK_VER /opt/spark
 echo "export PYTHONPATH=$SPARK_HOME/python/:$SPARK_HOME/python/lib/py4j-0.10.4-src.zip:$SPARK_HOME/python/lib/pyspark.zip:$PYTHONPATH" >> ~/.bashrc
 echo "export SPARK_HOME=/opt/spark" >> ~/.bashrc
 echo "export PATH=$PATH:$SPARK_HOME/bin" >> ~/.bashrc
+

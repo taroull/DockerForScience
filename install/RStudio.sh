@@ -11,3 +11,4 @@ ln -s /usr/lib/rstudio-server/extras/init.d/debian/rstudio-server /etc/init.d/rs
 addgroup rstudio
 useradd -m -s /bin/bash -g rstudio rstudio
 echo rstudio:rstudio | chpasswd
+

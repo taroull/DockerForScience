@@ -10,5 +10,4 @@ echo "session-default-working-dir=/notebooks" >> /etc/rstudio/rsession.conf
 ln -s /usr/lib/rstudio-server/extras/init.d/debian/rstudio-server /etc/init.d/rstudio-server
 addgroup rstudio
 useradd -m -s /bin/bash -g rstudio rstudio
-#echo rstudio:1234 | chpasswd
 echo rstudio:rstudio | chpasswd

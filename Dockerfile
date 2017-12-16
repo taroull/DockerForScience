@@ -1,3 +1,6 @@
+# CAMBIAR TODO A INSTALL NO ETC
+# CAMBIAR TODO A INSTALL NO ETC
+
 #OS
 FROM ubuntu:latest
 LABEL maintainer="Sergio Martin Santana <sergio.ms.91@gmail.com>"
@@ -11,27 +14,36 @@ RUN bash base.sh
 RUN mkdir -p /notebooks/PyLibraries
 COPY /install/python.sh .
 RUN bash python.sh
-COPY /install/custom_python.sh .
-RUN bash custom_python.sh
+COPY install/custom_python.sh .
+COPY install/PyLibraries.sh .
+#RUN bash custom_python.sh
 
 #4. Spark
 COPY install/spark.sh .
 RUN bash spark.sh
+ENV SPARK_HOME /opt/spark
+ENV PYTHONPATH $SPARK_HOME/python/:$SPARK_HOME/python/lib/py4j-0.10.4-src.zip:$SPARK_HOME/python/lib/pyspark.zip:$PYTHONPATH
+ENV PATH=$PATH:$SPARK_HOME/bin
+#echo "export SPARK_HOME=/opt/spark" >> ~/.bashrc
+#echo "export PYTHONPATH=\$SPARK_HOME/python/:\$SPARK_HOME/python/lib/py4j-0.10.4-src.zip:\$SPARK_HOME/python/lib/pyspark.zip:\$PYTHONPATH" >> ~/.bashrc
+#echo "export PATH=\$PATH:\$SPARK_HOME/bin" >> ~/.bashrc
 
 #3.Jupyter
-WORKDIR /root/.jupyter/
-COPY install/jupyter_notebook_config.py .
-WORKDIR /install
+#WORKDIR /root/.jupyter/
+COPY install/jupyter_notebook_config.py /root/.jupyter/jupyter_notebook_config.py
+#WORKDIR /install
 COPY install/jupyter.sh .
 RUN bash jupyter.sh
+ENV PIP_TARGET /notebooks/PyLibraries
 
 #4.R
-WORKDIR /notebooks/Rlibraries
-WORKDIR /install
+#WORKDIR /notebooks/Rlibraries
+RUN mkdir -p /notebooks/Rlibraries
+#WORKDIR /install
 COPY install/R.sh .
 RUN bash R.sh
 COPY install/Rconfig.R .
-RUN Rscript Rconfig.R
+#RUN Rscript Rconfig.R
 
 #5.RStudio
 COPY install/RStudio.sh .
@@ -46,15 +58,15 @@ EXPOSE 8080 8081 7077
 EXPOSE 8787
 
 #X. Finishing Installation
-COPY install/start.sh /etc/start.sh
-COPY install/SparkConf.sh /etc/SparkConf.sh
-WORKDIR /notebooks/PyLibraries
-WORKDIR /install
+COPY install/start.sh /install/start.sh
+COPY install/SparkConf.sh /install/SparkConf.sh
+#WORKDIR /notebooks/PyLibraries
+#WORKDIR /install
 WORKDIR /notebooks
-RUN rm -rf /install
-RUN locale-gen en_US.UTF-8
+#RUN rm -rf /install
+#RUN locale-gen en_US.UTF-8
 #RUN echo "R_LIBS='/notebooks/Rlibraries'" >> /usr/lib/R/etc/Renviron
 #RUN echo "setwd('/notebooks')" >> /etc/R/Rprofile.site
-ENV PIP_TARGET /notebooks/PyLibraries
+#ENV PIP_TARGET /notebooks/PyLibraries
 
-ENTRYPOINT ["/etc/start.sh"]
+ENTRYPOINT ["/install/start.sh"]

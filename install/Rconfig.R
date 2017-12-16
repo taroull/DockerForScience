@@ -9,5 +9,8 @@ RSetUpConfig <- function() {
 MakingAvalible <- function() {
   IRkernel::installspec(user = FALSE)
 }
-RSetUpConfig()
+
+if (!require("devtools")) {
+  RSetUpConfig()
+}
 MakingAvalible()

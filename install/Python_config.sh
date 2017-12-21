@@ -1,7 +1,7 @@
 #!/bin/bash
-#Specify as "<library>[==version] … [<libraryN>[==version]]”
-#Libraries="pandas==0.21.0 scipy bokeh plotly"
-Libraries=""
+#Specify as "<library>[==version] [<libraryN>[==version]]
+#For example, Libraries="pandas==0.21.0 scipy bokeh plotly"
+Libraries="findspark numpy scipy matplotlib pillow scikit-learn imageio"
 if [ ! -z "$Libraries" ];
 then
   for install in $Libraries

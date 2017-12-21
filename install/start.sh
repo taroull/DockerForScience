@@ -1,19 +1,18 @@
-#!/bin/bash
+#!/usr/bin/env bash
 myip=$(/sbin/ip -o -4 addr list eth0 | awk '{print $4}' | cut -d/ -f1)
+locale-gen en_US.UTF-8
+bash /install/Spark_config.sh
 if [ "$myip" = "172.27.0.2" ]
 then
   echo "Master"
-  locale-gen en_US.UTF-8
-#  BASH IRkernel
-  Rscript /install/Rconfig.R
-  bash /install/PyLibraries.sh
-  bash /install/custom_python.sh
+  . /install/envs_config.sh
+  mkdir -p /notebooks/Rlibraries
+  Rscript /install/R_config.R
+  chmod -R 777 /notebooks/PyLibraries
+  mkdir -p /notebooks/PyLibraries
+  bash /install/Python_config.sh
+  chmod -R 777 /notebooks/PyLibraries
   /etc/init.d/rstudio-server restart
-  bash /install/SparkConf.sh
   exec jupyter notebook --no-browser --allow-root &> /dev/null &
-  tail -f /dev/null 	#Sleep forever(This keeps the container in the state running)
-else
-  locale-gen en_US.UTF-8
-  bash /install/SparkConf.sh
-  tail -f /dev/null		#Sleep forever(This keeps the container in the state running)
 fi
+tail -f /dev/null		#Sleep forever(This keeps the container in the state running)

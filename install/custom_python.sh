@@ -2,7 +2,7 @@
 #Specify as "<library>[==version] … [<libraryN>[==version]]”
 #Custom="pandas==0.21.0 bokeh plotly"
 Mandatories="findspark numpy scipy matplotlib Pillow scikit-learn imageio "
-Optional=""
+Custom=""
 Libraries=$Mandatories$Custom
 List=$(pip list --format=freeze)
 if [ ! -z "$Libraries" ];

@@ -13,7 +13,10 @@ RUN bash base.sh
 #2.Python
 # RUN mkdir -p /notebooks/PyLibraries
 COPY /install/python.sh .
-RUN bash python.sh
+RUN echo "---------------------------------------" && \
+    echo "Installing Python in data science stack" && \
+    echo "---------------------------------------" && \
+    bash python.sh
 COPY install/custom_python.sh .
 COPY install/PyLibraries.sh .
 #RUN bash custom_python.sh

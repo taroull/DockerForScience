@@ -1,7 +1,9 @@
 #!/bin/bash
 #Specify as "<library>[==version] … [<libraryN>[==version]]”
-#Libraries="pandas==0.21.0 scipy bokeh plotly"
-Libraries="findspark numpy scipy matplotlib Pillow scikit-learn imageio"
+#Custom="pandas==0.21.0 bokeh plotly"
+Mandatories="findspark numpy scipy matplotlib Pillow scikit-learn imageio "
+Optional=""
+Libraries=$Mandatories$Custom
 List=$(pip list --format=freeze)
 if [ ! -z "$Libraries" ];
 then

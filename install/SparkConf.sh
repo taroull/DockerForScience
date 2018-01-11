@@ -8,6 +8,7 @@ echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64" >> ~/.bashrc
 export PYSPARK_DRIVER_PYTHON="jupyter"
 export PYSPARK_DRIVER_PYTHON_OPTS="notebook"
 # For python 3 users, you have to add the line below or you will get an error
+# For python 2 users you have to change this variable to PYSPARK_PYTHON=python
 export PYSPARK_PYTHON=python3
 
 if [ "$myip" = "$masterip" ]

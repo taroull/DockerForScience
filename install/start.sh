@@ -5,11 +5,11 @@ then
   echo "Master"
   locale-gen en_US.UTF-8
   mkdir -p /notebooks/Rlibraries
-  chmod -R 770 /notebooks/Rlibraries
+  chmod -R 777 /notebooks/Rlibraries
   Rscript /install/Rconfig.R
 
   mkdir -p /notebooks/PyLibraries
-  chmod -R 770 /notebooks/PyLibraries
+  chmod -R 777 /notebooks/PyLibraries
   . /install/PyLibraries.sh
   . /install/custom_python.sh
 

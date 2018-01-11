@@ -4,12 +4,17 @@ if [ "$myip" = "172.27.0.2" ]
 then
   echo "Master"
   locale-gen en_US.UTF-8
-#  BASH IRkernel
+  mkdir -p /notebooks/Rlibraries
+  chmod -R 770 /notebooks/Rlibraries
   Rscript /install/Rconfig.R
-  bash /install/PyLibraries.sh
-  bash /install/custom_python.sh
+
+  mkdir -p /notebooks/PyLibraries
+  chmod -R 770 /notebooks/PyLibraries
+  . /install/PyLibraries.sh
+  . /install/custom_python.sh
+
   /etc/init.d/rstudio-server restart
-  bash /install/SparkConf.sh
+  . /install/SparkConf.sh
   exec jupyter notebook --no-browser --allow-root &> /dev/null &
   tail -f /dev/null 	#Sleep forever(This keeps the container in the state running)
 else

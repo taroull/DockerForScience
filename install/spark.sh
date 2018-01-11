@@ -12,3 +12,10 @@ ln -s /opt/spark-$SPARK_VER /opt/spark
 # echo "export SPARK_HOME=/opt/spark" >> ~/.bashrc
 # echo "export PYTHONPATH=\$SPARK_HOME/python/:\$SPARK_HOME/python/lib/py4j-0.10.4-src.zip:\$SPARK_HOME/python/lib/pyspark.zip:\$PYTHONPATH" >> ~/.bashrc
 # echo "export PATH=\$PATH:\$SPARK_HOME/bin" >> ~/.bashrc
+# echo "export SPARK_HOME=/opt/spark" >> ~/.bashrc
+# echo "export PATH=\$SPARK_HOME/bin:\$PATH" >> ~/.bashrc
+# echo "export PYTHONPATH=\$SPARK_HOME/python:\$SPARK_HOME/python/lib/py4j-0.10.4-src.zip:\$SPARK_HOME/python/lib/pyspark.zip" >> ~/.bashrc
+# echo "export PYSPARK_DRIVER_PYTHON=\"jupyter\"" >> ~/.bashrc
+# echo "export PYSPARK_DRIVER_PYTHON_OPTS=\"notebook --no-browser --allow-root\"" >> ~/.bashrc
+# For python 3 users, you have to add the line below or you will get an error
+# echo "export PYSPARK_PYTHON=python3" >> ~/.bashrc

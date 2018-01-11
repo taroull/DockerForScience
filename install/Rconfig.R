@@ -6,11 +6,11 @@ RSetUpConfig <- function() {
   install_github('IRkernel/IRdisplay')
   install_github('IRkernel/IRkernel')
   }
-MakingAvalible <- function() {
+MakingAvalaible <- function() {
   IRkernel::installspec(user = FALSE)
 }
 
 if (!require("devtools")) {
   RSetUpConfig()
 }
-MakingAvalible()
+MakingAvalaible()

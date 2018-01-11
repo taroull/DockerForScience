@@ -7,3 +7,4 @@ export PIP_DOWNLOAD_CACHE=${PIP_TARGET}/pip
 mkdir -p ~/.pip
 echo -e "[global]\ntarget=${PIP_TARGET}\nno-cache-dir = false\ndownload-cache = ${PIP_TARGET}/pip" >> ~/.pip/pip.conf
 echo "export PIP_TARGET=${PIP_TARGET}" >> ~/.bashrc
+echo "export PIP_DOWNLOAD_CACHE=${PIP_TARGET}/pip" >> ~/.bashrc

@@ -5,14 +5,12 @@ then
   echo "Master"
   locale-gen en_US.UTF-8
   mkdir -p /notebooks/Rlibraries
-  chmod -R 777 /notebooks/Rlibraries
   Rscript /install/Rconfig.R
-
+  chmod -R 777 /notebooks/Rlibraries
   mkdir -p /notebooks/PyLibraries
-  chmod -R 777 /notebooks/PyLibraries
   . /install/PyLibraries.sh
   . /install/custom_python.sh
-
+  chmod -R 777 /notebooks/PyLibraries
   /etc/init.d/rstudio-server restart
   . /install/SparkConf.sh
   exec jupyter notebook --no-browser --allow-root &> /dev/null &

@@ -14,8 +14,8 @@ if [ "$myip" = "$masterip" ]
 then
     echo "Master"
     echo "SPARK_MASTER_HOST=$myip" >> /opt/spark/conf/spark-env.sh
-    export PYTHONPATH=$SPARK_HOME/python/:$SPARK_HOME/python/lib/py4j-0.10.4-src.zip:$SPARK_HOME/python/lib/pyspark.zip:$PYTHONPATH
-    echo "export PYTHONPATH=\$SPARK_HOME/python/:\$SPARK_HOME/python/lib/py4j-0.10.4-src.zip:\$SPARK_HOME/python/lib/pyspark.zip:\$PYTHONPATH" >> ~/.bashrc
+    export PYTHONPATH=$SPARK_HOME/python/:$SPARK_HOME/python/lib/py4j-0.10.4-src.zip:$SPARK_HOME/python/lib/pyspark.zip:$PIP_TARGET:$PYTHONPATH
+    echo "export PYTHONPATH=\$SPARK_HOME/python/:\$SPARK_HOME/python/lib/py4j-0.10.4-src.zip:\$SPARK_HOME/python/lib/pyspark.zip:\$PIP_TARGET:\$PYTHONPATH" >> ~/.bashrc
     export PATH=$PATH:$SPARK_HOME/bin
     echo "export PATH=\$PATH:\$SPARK_HOME/bin" >> ~/.bashrc
     /opt/spark/sbin/start-master.sh

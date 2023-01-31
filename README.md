@@ -1,5 +1,9 @@
 # DockerForScience
-Deploying a Scalable Data Science Environment Using Docker
+>  **Deploying a Scalable Data Science Environment Using Docker** <br>
+> by Martín-Santana, S., Pérez-González, C.J., Colebrook, M., Roda-García, J.L., González-Yanes, P. <br>
+> In: García Márquez, F., Lev, B. (eds) *Data Science and Digital Business*. Springer, Cham. <br>
+> [https://doi.org/10.1007/978-3-319-95651-0_7](https://doi.org/10.1007/978-3-319-95651-0_7)
+
  
 | **Located in**        | **File name**              | **Function**                                                       |
 |-----------------------|----------------------------|--------------------------------------------------------------------|
